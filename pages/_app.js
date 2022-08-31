@@ -1,7 +1,15 @@
-import '../styles/globals.css'
+import { StateContext } from 'context/StateContext'
+import React from 'react'
+import AppLayout from '../components/AppLayout'
 
 function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
+  return (
+    <StateContext>
+      <AppLayout>
+        <Component {...pageProps} />
+      </AppLayout>
+    </StateContext>
+  )
 }
 
 export default MyApp
