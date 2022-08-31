@@ -36,6 +36,7 @@ const SideBar = () => {
             height: 100vh;
             transition: width 2s, height 4s;
             animation: openSidebar 0.2s linear;
+            animation-direction: forwards;
           }
 
           @keyframes openSidebar {
@@ -55,7 +56,7 @@ const SideBar = () => {
 
           .sideBar__items {
             list-style: none;
-            font-size: 1.5rem;
+            font-size: 1.5em;
           }
 
           .sideBar__item {

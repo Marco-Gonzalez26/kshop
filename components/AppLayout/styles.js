@@ -30,10 +30,10 @@ export default css`
     justify-content: center;
     align-items: center;
   }
-  h1{
+  h1 {
     font-size: 2rem;
     font-weight: 700;
-    margin: 0
+    margin: 0;
   }
   main {
     background: #fff;
@@ -44,21 +44,9 @@ export default css`
     overflow-y: auto;
     scroll-behavior: smooth;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
-    scrollbar-width: none;
     display: flex;
     flex-direction: column;
     z-index: 9999;
-  }
-  ::-webkit-scrollbar {
-    width: 10px;
-  }
-  ::-webkit-scrollbar-track {
-    border-radius: 3em;
-    background: #fff;
-  }
-  ::-webkit-scrollbar-thumb {
-    background: #000;
-    border-radius: 3em;
   }
   @media (min-width: ${breakPoints.mobile}) {
     main {
@@ -123,7 +111,7 @@ export default css`
 
   a > :global(svg) {
     font-size: 1.75rem;
-    margin-right: .5rem
+    margin-right: 0.5rem;
   }
   @media (max-width: 1200px) {
     section {
@@ -131,7 +119,7 @@ export default css`
     }
   }
 
-  img{
+  img {
     border-radius: 1rem;
   }
 `
