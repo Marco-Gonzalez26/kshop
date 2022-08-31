@@ -2,8 +2,8 @@ import React, { useState } from 'react'
 import { BsHandbag, BsCart2 } from 'react-icons/bs'
 import Link from 'next/link'
 import { useStateContext } from 'context/StateContext'
-import { motion } from 'framer-motion'
 import SideBar from './SideBar'
+import Cart from './Cart'
 
 const Navbar = () => {
   const { openSection, setOpenSection, openNavItem, setOpenNavItem } =
@@ -11,14 +11,13 @@ const Navbar = () => {
 
   const { chicas, belleza } = openSection
   const { sidebar, carrito } = openNavItem
-  console.log(sidebar)
   return (
     <>
       <header>
         <nav>
           <div
             className="nav__item-container"
-            onClick={() => setOpenNavItem({ sidebar: true })}
+            onClick={() => setOpenNavItem({ sidebar: true, carrito: false })}
           >
             <BsHandbag />
             <p>Tienda</p>
@@ -28,8 +27,11 @@ const Navbar = () => {
               <span>k</span>Store
             </a>
           </Link>
-          <div className="nav__item-container">
-            <div className="nav__cart-qty">2</div>
+          <div
+            className="nav__item-container"
+            onClick={() => setOpenNavItem({ sidebar: false, carrito: true })}
+          >
+            <div className="nav__cart-qty">0</div>
             <BsCart2 />
             <p>Carrito</p>
           </div>
@@ -49,6 +51,7 @@ const Navbar = () => {
           </div>
         </div>
         {sidebar && <SideBar />}
+        {carrito && <Cart />}
       </header>
 
       <style jsx>{`
