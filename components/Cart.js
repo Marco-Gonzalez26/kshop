@@ -23,7 +23,7 @@ const SideBar = () => {
       <style jsx>
         {`
           .cart {
-            width: ${carrito ? '50%' : '0'};
+            width: ${carrito ? '60%' : '0'};
             max-width: 25rem;
             background: rgba(255, 255, 255, 0.85);
             backdrop-filter: blur(5px);
@@ -63,7 +63,7 @@ const SideBar = () => {
           }
           .close-icon {
             display: flex;
-            justify-content: flex-end;
+            justify-content: flex-start;
             margin: 1em;
             cursor: pointer;
           }

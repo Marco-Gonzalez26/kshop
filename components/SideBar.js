@@ -23,7 +23,7 @@ const SideBar = () => {
       <style jsx>
         {`
           .sideBar {
-            width: ${sidebar ? '50%' : '0'};
+            width: ${sidebar ? '60%' : '0'};
             max-width: 25rem;
             background: rgba(255, 255, 255, 0.85);
             backdrop-filter: blur(5px);
@@ -57,6 +57,7 @@ const SideBar = () => {
           .sideBar__items {
             list-style: none;
             font-size: 1.5em;
+            width:100%;
           }
 
           .sideBar__item {

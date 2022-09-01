@@ -17,35 +17,71 @@ const Section = () => {
   const { openSection, setOpenSection } = useStateContext()
   const { chicas, belleza } = openSection
 
-  console.log('chicas', chicas, 'belleza', belleza)
+  const array = chicas ? images : beautyImgs
+
+  console.log(array)
   return (
     <>
-      <div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
-        {chicas === true && (
-          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
-            {images.map((image, index) => (
-              <img src={image} key={index} />
-            ))}
-          </motion.div>
-        )}
-
-        {belleza && (
-          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
-            {beautyImgs.map((image, index) => (
-              <img src={image} key={index} />
-            ))}
-          </motion.div>
-        )}
+      <div>
+        <motion.div
+          initial={{ opacity: 0, y: -100 }}
+          animate={{ opacity: 1, y: -16 }}
+        >
+          {array?.map((image, index) => (
+            <img src={image} key={index} />
+          ))}
+        </motion.div>
+        <div>
+          <h3>Productos que te podrian gustar!</h3>
+          <div className="marquee">
+            <motion.div
+              className="track"
+              drag="x"
+              dragConstraints={{ left: -300, right: 0 }}
+            >
+              {array?.map((image, index) => (
+                <img className="marquee__img" src={image} key={index} />
+              ))}
+            </motion.div>
+          </div>
+        </div>
       </div>
       <style jsx>
         {`
           div {
             width: 100%;
+            height: 100%;
           }
           img {
             width: 100%;
             object-fit: fill;
-            margin-top: 2rem;
+            height: 50%;
+            margin-top: 1rem;
+          }
+          .marquee {
+            position: relative;
+            height: 350px;
+            width: 200vw;
+            overflow: hidden;
+          }
+
+          .track {
+            position: absolute;
+            display: flex;
+            width: 200%;
+            display: flex;
+          }
+          h3{
+            font-size: 1.45rem;
+            margin-left: 1rem;
+          }
+          .marquee__img {
+            min-width: 10rem;
+            height: 15rem;
+            max-width: 12rem;
+            margin: 1em;
+            object-fit: fill;
+            border-radius: 1rem;
           }
         `}
       </style>
