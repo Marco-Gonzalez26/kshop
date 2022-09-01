@@ -22,29 +22,56 @@ const Section = () => {
 
   return (
     <>
-      <div className="section__container">
+      <div className="section__container" id='section'>
         <motion.div
           initial={{ opacity: 0, y: -100 }}
-          animate={{ opacity: 1, y: -16 }}
+          animate={{ opacity: 1, y: -32 }}
         >
           {array?.map((image, index) => (
             <img className="section__product" src={image} key={index} />
           ))}
         </motion.div>
+        <h2>Tambien te podria gustar</h2>
 
-        <Carrousel products={array} />
+        <div className='maylike__container'>
+          {array.map((img, index) => {
+            return (
+              <img src={img} key={index} className='maylike-item'/>
+            )
+          })}
+        </div>
       </div>
       <style jsx>
         {`
           .section__container {
             width: 100%;
             height: 100%;
+            position: relative;
           }
           .section__product {
             width: 100%;
             object-fit: fill;
             height: 50%;
-            margin-top: 1rem;
+            margin-top: 2rem;
+          }
+
+          h2 {
+            text-align: center;
+            font-size: 1.85rem;
+            margin-bottom: 2em;
+          }
+          .maylike__container{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 5rem;
+            margin-bottom: 3rem;
+          }
+          .maylike-item{
+            border-radius:1rem;
+            width: 50%;
+            object-fit: fill;
+
           }
         `}
       </style>

@@ -7,7 +7,7 @@ import SideBar from 'components/SideBar'
 export default function AppLayout({ children }) {
   return (
     <>
-      <div>
+      <div className='app__container'>
         <section className="right__section">
           <h1>"Foto tuya"</h1>
           <img

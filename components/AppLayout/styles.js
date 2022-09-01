@@ -18,7 +18,7 @@ export const globalStyles = css.global`
 `
 
 export default css`
-  div {
+  .app__container {
     display: flex;
     height: 100vh;
     justify-content: center;
@@ -36,7 +36,6 @@ export default css`
     width: 100%;
     position: relative;
     overflow-y: auto;
-    scroll-behavior: smooth;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
     display: flex;
     flex-direction: column;
@@ -51,7 +50,7 @@ export default css`
   section {
     background-color: #f0f0f0;
     height: 100vh;
-    width: 35%;
+    width:50%;
     display: grid;
     place-items: center;
   }
@@ -100,7 +99,7 @@ export default css`
       #cc2366 75%,
       #bc1888 100%
     );
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', endColorstr='#bc1888',GradientType=1 );
+  
   }
 
   a > :global(svg) {

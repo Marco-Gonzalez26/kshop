@@ -23,7 +23,7 @@ const Navbar = () => {
             <p>Tienda</p>
           </div>
           <Link href="/">
-            <a>
+            <a href='#section'>
               <span>k</span>Store
             </a>
           </Link>
@@ -60,7 +60,7 @@ const Navbar = () => {
         header {
           position: sticky;
           display: flex;
-          height: 10rem;
+          height: 12rem;
           border-bottom: 2px solid #f0f0f0;
           top: 0;
           width: 100%;
@@ -86,7 +86,7 @@ const Navbar = () => {
           padding: 0;
           cursor: pointer;
           transition: all 0.5s ease;
-          padding: 0.2rem;
+          padding: 0.5em;
           border-radius: 50%;
         }
         .nav__item-container:hover {
