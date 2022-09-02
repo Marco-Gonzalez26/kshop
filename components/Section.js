@@ -31,15 +31,7 @@ const Section = () => {
             <img className="section__product" src={image} key={index} />
           ))}
         </motion.div>
-        <h2>Tambien te podria gustar</h2>
-
-        <div className='maylike__container'>
-          {array.map((img, index) => {
-            return (
-              <img src={img} key={index} className='maylike-item'/>
-            )
-          })}
-        </div>
+        <Carrousel products={array}/>
       </div>
       <style jsx>
         {`
@@ -59,19 +51,6 @@ const Section = () => {
             text-align: center;
             font-size: 1.85rem;
             margin-bottom: 2em;
-          }
-          .maylike__container{
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 5rem;
-            margin-bottom: 3rem;
-          }
-          .maylike-item{
-            border-radius:1rem;
-            width: 50%;
-            object-fit: fill;
-
           }
         `}
       </style>

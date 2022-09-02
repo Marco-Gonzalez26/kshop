@@ -1,42 +1,51 @@
 import React, { useState, useRef, useEffect } from 'react'
-import { motion } from '../node_modules/framer-motion/dist/framer-motion'
+import { Splide, SplideSlide, SplideTrack } from '@splidejs/react-splide'
+import '@splidejs/react-splide/css/core'
 
 const Carrousel = ({ products }) => {
+  const options = {
+    type: 'loop',
+    gap: '2rem',
+    width: '100%',
+    autoplay: true,
+    pauseOnHover: false,
+    resetProgress: false,
+    height: '20rem',
+    arrows: false,
+    perPage: 1,
+    perMove: 1,
+    padding: '20%',
+    cover: true,
+    pagination: false
+  }
+
   return (
     <>
       <h2>Tambien te podria gustar</h2>
-      <motion.div className="slider-container">
-        <motion.div
+      <div className="slider-container">
+        <Splide
+          options={options}
           className="slider"
-          drag="x"
-          dragConstraints={{ right: 0, left: -5 }}
+          aria-label="My Favorite Images"
+          hasTrack={false}
         >
-          {products.map((image) => (
-            <motion.div className="item">
-              <img src={image} alt="" className="item-img" />
-            </motion.div>
-          ))}
-        </motion.div>
-      </motion.div>
+          <SplideTrack className="track">
+            {products.map((image) => (
+              <SplideSlide className="item">
+                <img src={image} alt="" className="item-img" />
+              </SplideSlide>
+            ))}
+          </SplideTrack>
+        </Splide>
+      </div>
       <style jsx>
         {`
-          .item {
-            height: 0rem;
-            min-width: 0rem;
-            padding: 2rem;
-          }
-          .item-img {
-            height: 50%;
-            width: 50%;
-            pointer-events: none;
-          }
-          .slider {
-            display: flex;
-            cursor: grab;
+          h2 {
+            text-align: center;
+            font-size: 2.25rem;
           }
           .slider-container {
-            margin: 0 auto;
-            overflow-x: hidden;
+            margin-bottom: 5em;
           }
         `}
       </style>
